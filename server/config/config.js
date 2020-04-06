@@ -25,10 +25,10 @@ let urlDB;
 if ( process.env.NODE_ENV === 'dev' ) {
     urlDB = 'mongodb://localhost:27017/cafe';
 } else {
-    urlDB = 'mongodb+srv://gabriel:sGUUnyf5lFZRId7v@cluster0-ii2fv.mongodb.net/cafe?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true';
+    urlDB = process.env.MONGO_URI;
 }
-
 process.env.URLDB = urlDB;
+
 // =====================
 // Google client ID
 // =====================
