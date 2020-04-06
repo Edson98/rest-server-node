@@ -21,7 +21,7 @@ app.use(express.static(path.resolve(__dirname, '../public')));
  // importacion de rutas
 app.use(require('./routes/index' ));
 
-mongoose.connect('mongodb://localhost:27017/cafe',
+mongoose.connect(process.env.URLDB,
     {   useNewUrlParser:    true, 
         useUnifiedTopology: true,
         useCreateIndex:     true   },
