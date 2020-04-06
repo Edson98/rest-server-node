@@ -3,6 +3,7 @@ require('./config/config');
 
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const app = express();
 
@@ -12,8 +13,13 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
+
+// Habilitar la carpeta pública
+app.use(express.static(path.resolve(__dirname, '../public')));
+
+
  // importacion de rutas
-app.use(require('./routes/index'));
+app.use(require('./routes/index' ));
 
 mongoose.connect('mongodb://localhost:27017/cafe',
     {   useNewUrlParser:    true, 
@@ -25,5 +31,5 @@ mongoose.connect('mongodb://localhost:27017/cafe',
 });
 
 app.listen(process.env.PORT, () => {
-    console.log('Escuchando puerto: ', 3000);  
+    console.log('Escuchando puerto: ', process.env.PORT);  
 });
