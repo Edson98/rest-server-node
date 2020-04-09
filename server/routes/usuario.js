@@ -74,7 +74,7 @@ app.put('/usuario/:id', [verificaToken, verificaAdminRole], function (req, res) 
     
     Usuario.findByIdAndUpdate( id, body, { new: true, runValidators: true  } ,(err, usuarioDB) => {
         
-        if (err) {
+        if ( err ) {
             return res.status(400).json({
                 ok: false,
                 err
