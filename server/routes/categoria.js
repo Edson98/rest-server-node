@@ -140,7 +140,7 @@ app.delete('/categoria/:id', [verificaToken, verificaAdminRole], (req, res) => {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    message: 'El ID no existe'
+                    message: 'El ID no existe.'
                 }
             });
         }

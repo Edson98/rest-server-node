@@ -88,7 +88,7 @@ app.get('/producto/buscar/:termino', verificaToken, ( req,res ) => {
                     return res.status(400).json({
                         ok: false,
                         err: {
-                            message: 'El ID no es válido.'
+                            message: 'El Termino no es válido.'
                         }
                     });
                 }
